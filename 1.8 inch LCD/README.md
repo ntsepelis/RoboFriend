@@ -60,19 +60,24 @@ https://files.waveshare.com/upload/8/8d/LCD_Module_RPI_code.zip
 #### Συναρτήσεις Γραφικών (GUI Functions)
 
 Python has an image library PIL official library link, it does not need to write code from the logical layer like C and can directly call to the image library for image processing. The following will take a 1.54-inch LCD as an example, we provide a brief description of the demo. 
+
 •	It needs to use the image library and install the library.
 sudo apt-get install python3-pil  
 And then import the library
 from PIL import Image,ImageDraw,ImageFont.
 Among them, Image is the basic library, ImageDraw is the drawing function, and ImageFont is the text function. 
+
 •	Define an image cache to facilitate drawing, writing, and other functions on the picture.
 image1 = Image.new("RGB", (disp.width, disp.height), "WHITE")
 The first parameter defines the color depth of the image, which is defined as "1" to indicate the bitmap of one-bit depth. The second parameter is a tuple that defines the width and height of the image. The third parameter defines the default color of the buffer, which is defined as "WHITE". 
+
 Create a drawing object based on Image1 on which all drawing operations will be performed on here.
 draw = ImageDraw.Draw(image1)
+
 Draw a line.
 draw.line([(20, 10),(70, 60)], fill = "RED", width = 1)
 The first parameter is a four-element tuple starting at (0, 0) and ending at (127,0). Draw a line. Fill ="0" means the color of the line is white. 
+
 Draw a rectangle.
 draw.rectangle([(20,10),(70,60)],fill = "WHITE", outline="BLACK")
 Η πρώτη παράμετρος είναι ένα tuple τεσσάρων (4) στοιχείων.
@@ -80,8 +85,10 @@ draw.rectangle([(20,10),(70,60)],fill = "WHITE", outline="BLACK")
 •	(70,60). Οι συντεταγμένες της κάτω δεξιά γωνίας του του ορθογωνίου
 •	Fill =" WHITE". Το εσωτερικό του ορθογωνίου θα είναι λευκό.
 •	outline="BLACK". Το χρώμα του περιγράμματος θα είναι μαύρο.
+
 Σχεδιασμός Κύκλου.
 Υπάρχουν δύο τρόποι για να σχεδιαστεί ένας κύκλος.
+
 α. Χρησιμοποιώντας τη συνάρτηση draw.arc
 draw.arc((150,15,190,55),0, 360, fill =(0,255,0)
 Η συνάρτηση σχεδιάζει ένα τόξο που περιέχεται σε ένα τετράγωνο! 
@@ -92,6 +99,7 @@ draw.arc((150,15,190,55),0, 360, fill =(0,255,0)
 •	360. Τελική γωνία του τόξου. Το 360 αντιστοιχεί σε πλήρη κύκλο.
 •	fill =(0,255,0). R=0,G=255,B=0. Το εσωτερικό του κύκλου θα έχει χρώμα πράσινο.
 Αν το περιγεγραμμένο τετράπλευρο δεν είναι τετράγωνο, τότε η καμπύλη θα είναι έλλειψη.
+
 β. Χρησιμοποιώντας τη συνάρτηση draw.ellipse
 draw.ellipse((150,65,190,105), fill = 0)
 Η πρώτη παράμετρος είναι ένα tuple τεσσάρων (4) στοιχείων.
@@ -99,6 +107,7 @@ draw.ellipse((150,65,190,105), fill = 0)
 •	(190,105). Οι συντεταγμένες της κάτω δεξιά γωνίας του περιγεγραμμένου ορθογωνίου.
 •	fill = 0. Το εσωτερικό του κύκλου θα έχει χρώμα μαύρο.
 Αν το περιγεγραμμένο τετράπλευρο δεν είναι τετράγωνο, τότε η καμπύλη θα είναι έλλειψη.
+
 Character.
 The ImageFont module needs to be imported and instantiated: 
 Font1 = ImageFont.truetype("../Font/Font01.ttf",25)
@@ -110,9 +119,11 @@ draw.text((40, 50), 'WaveShare', fill = (128,255,128),font=Font2)
 text= u"微雪电子"
 draw.text((74, 150),text, fill = "WHITE",font=Font3)
 The first parameter is a tuple of 2 elements, with (40, 50) as the left vertex, the font is Font2, and the fill is the font color. You can directly make fill = "WHITE", because the regular color value is already defined Well, of course, you can also use fill = (128,255,128), the parentheses correspond to the values of the three RGB colors so that you can precisely control the color you want. The second sentence shows Waveshare Electronics, using Font3, the font color is white.
+
 •	read local image
 image = Image.open('../pic/LCD_1inch28.jpg')
 The parameter is the image path. 
+
 •	Other functions.
 For more information, you can refer to http://effbot.org/imagingbook pil 
 
