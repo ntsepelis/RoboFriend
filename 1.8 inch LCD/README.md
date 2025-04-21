@@ -1,30 +1,30 @@
-# 1.8INCH LCD MODULE
+# 1.8 inch LCD Module
  
-## INTRODUCTION
-This product provides Raspberry Pi, STM32, Arduino examples 
+## ΕΙΣΑΓΩΓΗ
+Στο παρόν αρχείο περιγράφονται τα βήματα που πρέπει να ακολουθηθούν για να ενεργοποιηθεί η οθόνη αλλά και να χρησιμοποιηθεί.
 
-### SPECIFICATIONS
-•	Operating voltage: 3.3V/5V (When using 5V power supply, the logic voltage is 5V, when using 3.3V power supply, the logic voltage is 3.3V)
-•	Interface: SPI
-•	LCD type: TFT
-•	Driver: ST7735S
-•	Resolution: 128 * 160 (Pixel)
-•	Display size: 35.04(W) * 28.03(H)(mm)
-•	Pixel size: 0.219(W) * 0.219(H)(MM)
-•	Dimension: 56.5 * 34(mm)
+### ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ
+-	Τάση Λειτουργίας: 3.3V/5V (Όταν χρησιμοποιούνται τα 5V, το λογικό "1" είναι τα 5V, ενώ για τάση λειτουργίας 3.3V, το λογικό "1" είναι τα 3.3V)
+-	Διεπαφή: SPI
+-	Τύπος LCD: TFT
+-	Οδηγός: ST7735S
+-	Ανάλυση: 128 x 160 (Pixel)
+-	Μέγεθος Οθόνης: 35.04mm(Πλάτος) x 28.03mm(Ύψος)
+-	Μέγεθος Εικονοστοιχείου: 0.219mm(Πλάτος) * 0.219xx(Ύψος)
+-	Διαστάσεις: 56.5mm x 34mm
 
-## INTERFACE DESCRIPTION
+## ΔΙΕΠΑΦΗ
 
-### RASPBERRY PI HARDWARE CONNECTION
+### RASPBERRY PI :: ΣΥΝΔΕΣΕΙΣ
 Please connect the LCD to your Raspberry Pi by the 8PIN cable according to the table below.
 Use the pin header or PH2.0 8PIN interface, you need to connect according to the following table.
 Connect to Raspberry Pi
  
 The 1.8inch LCD uses the PH2.0 8PIN interface, which can be connected to the Raspberry Pi according to the above table: (Please connect according to the pin definition table. The color of the wiring in the picture is for reference only, and the actual color shall prevail.)
  
-## WORKING WITH RASPBERRY PI
+## RASPBERRY PI :: ΛΕΙΤΟΥΡΓΙΑ
 
-### ENABLE SPI INTERFACE
+### ΕΝΕΡΓΟΠΟΙΗΣΗ SPI INTERFACE
 PS: If you are using the system of the Bullseye branch, you need to change "apt-get" to "apt", the system of the Bullseye branch only supports Python3. 
 1.	Open terminal, use command to enter the configuration page
 sudo raspi-config
@@ -36,23 +36,23 @@ Please make sure the SPI is not occupied by other devices, you can check in the 
 After rebooting the system, the Raspberry Pi OS user interface will be displayed. 
  
 
-### DOWNLOAD EXAMPLES
+### ΜΕΤΑΦΟΡΤΩΣΗ ΠΑΡΑΔΕΙΓΜΑΤΩΝ
 Εναλλακτικά μπορείς να το κατεβάσεις από τη διεύθυνση 
 https://files.waveshare.com/upload/8/8d/LCD_Module_RPI_code.zip
 Να το κάνεις unzip και να το τρέξεις.
 
-### RUN THE DEMO CODES
+### ΕΚΤΕΛΕΣΗ ΠΑΡΑΔΕΙΓΜΑΤΩΝ
 Στο IDE της επιλογής σας επιλέξτε και τρέξτε τα προγράμματα.
 
-## API DESCRIPTION
+## ΠΕΡΙΓΡΑΦΗ API 
 The RaspberryPi series can share a set of programs, because they are all embedded systems, and the compatibility is relatively strong.
 The program is divided into bottom-layer hardware interface, middle-layer LCD screen driver, and upper-layer application; 
  
-### PYTHON (FOR RASPBERRY PI)
+### PYTHON (ΓΙΑ RASPBERRY PI)
 
 Αρχεία που βρίσκονται στον φάκελο RaspberryPi\python\lib\
  
-#### LCDCONFIG.PY
+#### lcdconfig.py
 Module initialization and exit processing.
 def module_init()
 def module_exit()
@@ -73,12 +73,12 @@ sudo python 0inch96_LCD_test.py
 If your python version is python3 and you need to run the 0.96inch LCD test program, re-execute the following in linux command mode: 
 sudo python3 0inch96_LCD_test.py
 
-#### ABOUT ROTATION SETTINGS
+#### Στροφή Οθόνης
 If you need to set the screen rotation in the python program, you can set it by the statement im_r= image1.rotate(270). 
 im_r= image1.rotate(270)
 Rotation effect, take 1.54 as an example, the order is 0°, 90°, 180°, 270°
  
-#### GUI FUNCTIONS
+#### Συναρτήσεις Γραφικών (GUI Functions)
 Python has an image library PIL official library link, it does not need to write code from the logical layer like C and can directly call to the image library for image processing. The following will take a 1.54-inch LCD as an example, we provide a brief description of the demo. 
 •	It needs to use the image library and install the library.
 sudo apt-get install python3-pil  
