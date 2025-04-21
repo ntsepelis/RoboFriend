@@ -16,33 +16,31 @@
 ## ΔΙΕΠΑΦΗ
 
 ### RASPBERRY PI :: ΣΥΝΔΕΣΕΙΣ
-Please connect the LCD to your Raspberry Pi by the 8PIN cable according to the table below.
-Use the pin header or PH2.0 8PIN interface, you need to connect according to the following table.
-Connect to Raspberry Pi
- 
-The 1.8inch LCD uses the PH2.0 8PIN interface, which can be connected to the Raspberry Pi according to the above table: (Please connect according to the pin definition table. The color of the wiring in the picture is for reference only, and the actual color shall prevail.)
+Συνδέστε την οθόνη με το Raspberry Pi σύμφωνα με τον ακόλουθο πίνακα.\
+Περιγράφονται δύο τρόποι σύνδεσης ανάλογα με το αν το πρόγραμμα χρησιμοποιεί τη την απεικόνιση BCM2835 ή την κλασική (Board).
+
+![Πίνακας Συνδέσεων](./LCD1.png) 
+
+> Οι τρόποι απεικόνισης των pin του Raspberry Pi αναθέτουν δε κάθε pin έναν αριθμό ή ένα όνομα.
  
 ## RASPBERRY PI :: ΛΕΙΤΟΥΡΓΙΑ
 
 ### ΕΝΕΡΓΟΠΟΙΗΣΗ SPI INTERFACE
-PS: If you are using the system of the Bullseye branch, you need to change "apt-get" to "apt", the system of the Bullseye branch only supports Python3. 
-1.	Open terminal, use command to enter the configuration page
-sudo raspi-config
-2.	Choose Interfacing Options -> SPI -> Yes to enable SPI interface
- 
-3.	Reboot Raspberry Pi
-sudo reboot
-Please make sure the SPI is not occupied by other devices, you can check in the middle of /boot/config.txt
-After rebooting the system, the Raspberry Pi OS user interface will be displayed. 
- 
+
+1.	Στη γραμμή ενοτλών πληκτρολογείστε\
+**`sudo raspi-config`**
+2.	Επιλέξτε διαδοχικά: **Interfacing Options -> SPI -> Yes to enable SPI interface**
+3.	Επνακκινήστε το Raspberry Pi
 
 ### ΜΕΤΑΦΟΡΤΩΣΗ ΠΑΡΑΔΕΙΓΜΑΤΩΝ
-Εναλλακτικά μπορείς να το κατεβάσεις από τη διεύθυνση 
+Από τη διεύθυνση 
+
 https://files.waveshare.com/upload/8/8d/LCD_Module_RPI_code.zip
-Να το κάνεις unzip και να το τρέξεις.
+
+μεταφορτώστε τα παραδείγματα και αποσυμπιέστε τα.
 
 ### ΕΚΤΕΛΕΣΗ ΠΑΡΑΔΕΙΓΜΑΤΩΝ
-Στο IDE της επιλογής σας επιλέξτε και τρέξτε τα προγράμματα.
+Στο IDE της επιλογής σας επιλέξτε και τρέξτε τα παραδείγματα.
 
 ## ΠΕΡΙΓΡΑΦΗ API 
 The RaspberryPi series can share a set of programs, because they are all embedded systems, and the compatibility is relatively strong.
@@ -51,6 +49,8 @@ The program is divided into bottom-layer hardware interface, middle-layer LCD sc
 ### PYTHON (ΓΙΑ RASPBERRY PI)
 
 Αρχεία που βρίσκονται στον φάκελο RaspberryPi\python\lib\
+
+
  
 #### lcdconfig.py
 Module initialization and exit processing.
