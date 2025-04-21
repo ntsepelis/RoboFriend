@@ -39,46 +39,26 @@ https://files.waveshare.com/upload/8/8d/LCD_Module_RPI_code.zip
 
 μεταφορτώστε τα παραδείγματα και αποσυμπιέστε τα.
 
-### ΕΚΤΕΛΕΣΗ ΠΑΡΑΔΕΙΓΜΑΤΩΝ
-Στο IDE της επιλογής σας επιλέξτε και τρέξτε τα παραδείγματα.
+Μέσα στον φάκελο υπάρχουν τα ακόλουθα αρχεία
 
-## ΠΕΡΙΓΡΑΦΗ API 
-The RaspberryPi series can share a set of programs, because they are all embedded systems, and the compatibility is relatively strong.
-The program is divided into bottom-layer hardware interface, middle-layer LCD screen driver, and upper-layer application; 
- 
-### PYTHON (ΓΙΑ RASPBERRY PI)
+![Αρχεία Φακέλου](./LCD-Programs.png)
 
-Αρχεία που βρίσκονται στον φάκελο RaspberryPi\python\lib\
+### ΕΛΕΓΧΟΣ ΛΕΙΤΟΥΡΓΙΑΣ 
+Για να ελεγχθεί η σωστή εγκατάσταση και λειτουργία της οθόνης θα πρέπει διαδοχικά να εκτελέσετε τα ακόλουθα προγράμματα και να πάρετε ένδειξη σωστής λειτουργίας.
+1. `lcdconfig.py`
+2. `LCD_1inch8.py`
 
+### ΣΥΝΑΡΤΗΣΕΙΣ ΟΘΟΝΗΣ
 
- 
-#### lcdconfig.py
-Module initialization and exit processing.
-def module_init()
-def module_exit()
-Note:
-1. Here is some GPIO processing before and after using the LCD screen.
-2. The module_init() function is automatically called in the INIT () initializer on the LCD, but the module_exit() function needs to be called by itself.
-•	GPIO read and write:
-def  digital_write(pin, value)
-def  digital_read(pin)
-•	SPI write data.
-def spi_writebyte(data)
-•	xxx_LCD_test.py (xxx indicates the size, if it is a 0.96inch LCD, it is 0inch96_LCD_test.py, and so on)
-python is in the following directory:
-Raspberry Pi: RaspberryPi\python\examples\ 
- 
-If your python version is python2 and you need to run the 0.96inch LCD test program, re-execute it as follows in linux command mode: 
-sudo python 0inch96_LCD_test.py
-If your python version is python3 and you need to run the 0.96inch LCD test program, re-execute the following in linux command mode: 
-sudo python3 0inch96_LCD_test.py
+#### Προσανατολισμός Οθόνης
 
-#### Στροφή Οθόνης
-If you need to set the screen rotation in the python program, you can set it by the statement im_r= image1.rotate(270). 
-im_r= image1.rotate(270)
-Rotation effect, take 1.54 as an example, the order is 0°, 90°, 180°, 270°
+Αν θέλετε να αλλάξετε τον προσανατολισμό της οθόνης, χρησιμοποιήστε την εντολή\
+**`im_r= image1.rotate(270)`** \
+για να στρεφεί η οθόνη κατά 270°.\
+Οι δυνατές τιμές είναι: 0°, 90°, 180°, 270°
  
 #### Συναρτήσεις Γραφικών (GUI Functions)
+
 Python has an image library PIL official library link, it does not need to write code from the logical layer like C and can directly call to the image library for image processing. The following will take a 1.54-inch LCD as an example, we provide a brief description of the demo. 
 •	It needs to use the image library and install the library.
 sudo apt-get install python3-pil  
