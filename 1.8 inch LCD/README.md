@@ -145,22 +145,33 @@ https://files.waveshare.com/upload/8/8d/LCD_Module_RPI_code.zip
 >Αν το περιγεγραμμένο τετράπλευρο δεν είναι τετράγωνο, τότε η καμπύλη θα είναι έλλειψη.
 
 ***Κείμενο***
-The ImageFont module needs to be imported and instantiated: 
-Font1 = ImageFont.truetype("../Font/Font01.ttf",25)
-Font2 = ImageFont.truetype("../Font/Font01.ttf",35)
-Font3 = ImageFont.truetype("../Font/Font02.ttf",32)
-You can use the fonts of Windows or other fonts which is in ttc format..
-Note: Each character library contains different characters; If some characters cannot be displayed, it is recommended that you can refer to the encoding set ro used. To draw English characters, you can directly use the fonts; for Chinese characters, you need to add a symbol u: 
-draw.text((40, 50), 'WaveShare', fill = (128,255,128),font=Font2)
-text= u"微雪电子"
-draw.text((74, 150),text, fill = "WHITE",font=Font3)
-The first parameter is a tuple of 2 elements, with (40, 50) as the left vertex, the font is Font2, and the fill is the font color. You can directly make fill = "WHITE", because the regular color value is already defined Well, of course, you can also use fill = (128,255,128), the parentheses correspond to the values of the three RGB colors so that you can precisely control the color you want. The second sentence shows Waveshare Electronics, using Font3, the font color is white.
 
-•	read local image
-image = Image.open('../pic/LCD_1inch28.jpg')
-The parameter is the image path. 
+Στον φάκελο των παραδειγμάτων υπάρχουν τρεις διαφορετικές γραμματοσειρές (Font00.ttf,Font01.ttf,Font02.ttf), τις οποίες μπορούμε να ενεργοποιήσουμε με τις ακόλουθες εντολές
 
-•	Other functions.
-For more information, you can refer to http://effbot.org/imagingbook pil 
+**`Font0 = ImageFont.truetype("../Font/Font00.ttf",25)`**
+
+**`Font1 = ImageFont.truetype("../Font/Font01.ttf",35)`**
+
+**`Font2 = ImageFont.truetype("../Font/Font02.ttf",32)`**
+
+Μπορείτε να χρησιμοποιήσετε οποιαδήποτε γνωστή γραμματοσειρά θέλετε.
+
+_Παράδειγμα Κειμένου_
+
+**`draw.text((40, 50), 'WaveShare', fill = (128,255,128),font=Font2)`**
+
+όπου
+- (40, 50): το σημείο της οθόνης απ' όπου ξεκινάει το κείμενο
+-  'WaveShare': το κείμενο που θε εμφανιστεί
+-  fill = (128,255,128): το χρώμα του κειμένου
+-  font=Font2: η χρησιμοποιούμενη γραμματοσειρά.
+
+***Εικόνα***
+
+**`image = Image.open('../pic/LCD_1inch28.jpg')`**
+
+Φορτώνει την εικόνα `LCD_1inch28.jpg` που βρίσκεται στον φάκελο **`pic`**.
+
+> Περισσότερες πληροφορίες στον ιστοτόπο refer to http://effbot.org/imagingbook pil 
 
 
