@@ -171,7 +171,3 @@ _Παράδειγμα Κειμένου_
 **`image = Image.open('../pic/LCD_1inch28.jpg')`**
 
 Φορτώνει την εικόνα `LCD_1inch28.jpg` που βρίσκεται στον φάκελο **`pic`**.
-
-> Περισσότερες πληροφορίες στον ιστοτόπο refer to http://effbot.org/imagingbook pil 
-
-
