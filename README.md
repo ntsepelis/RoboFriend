@@ -16,7 +16,7 @@
 
 ## Αλληλεπίδραση
 
- ![DeskPal, your Robot Friend](/fotos/DeskPal.png)
+ ![DeskPal, your Robot Friend](/fotos/DeskPal.jpg)
 
 Πατώντας το κουμπί αλληλεπίδρασης, Ο Deskpal εμφανίζει το εβδομαδιαίο σου πρόγραμμα. 
 
