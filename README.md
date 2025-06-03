@@ -1,6 +1,6 @@
 # RoboFriend - DeskPal
 
- ![Tux, the Linux mascot](/fotos/1.png)
+ ![DeskPal-LOGO](/fotos/DeskPal-LOGO.png)
  
 ## Εισαγωγή
 
@@ -15,6 +15,8 @@
 - ραντεβού
 
 ## Αλληλεπίδραση
+
+ ![DeskPal, your Robot Friend](/fotos/DeskPal.png)
 
 Πατώντας το κουμπί αλληλεπίδρασης, Ο Deskpal εμφανίζει το εβδομαδιαίο σου πρόγραμμα. 
 
